@@ -1,1 +1,41 @@
-<h1>My Contact Information</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../projects/">Projects</a></li>
+            <li><a href="../contact/">Contact</a></li>
+            <li><a href="../resume/">Resume</a></li>
+            <li><a href="https://github.com/hannahhuangh" target="_blank">Profile</a></li>
+          </ul>
+      </nav>
+
+  <h1>Contact</h1>
+
+  <form action="mailto:YOUR_EMAIL_ADDRESS" method="POST" enctype="text/plain">
+    <label>
+      Email:
+      <input name="email" type="email">
+    </label>
+
+    <label>
+      Subject:
+      <input name="subject">
+    </label>
+
+    <label>
+      Body:
+      <textarea name="body"></textarea>
+    </label>
+
+    <button>Submit</button>
+  </form>
+</body>
+</html>
