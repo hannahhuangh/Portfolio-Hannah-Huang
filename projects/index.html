@@ -1,20 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Projects</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <h1>My Projects</h1>
-    <nav>
-        <ul>
-          <li><a href="../">Home</a></li>
-          <li><a href="../projects/">Projects</a></li>
-          <li><a href="../contact/">Contact</a></li>
-          <li><a href="../resume/">Resume</a></li>
-          <li><a href="https://github.com/hannahhuangh" target="_blank">Profile</a></li>
-        </ul>
-      </nav>
+  <nav>
+    <ul>
+      <li><a href="../">Home</a></li>
+      <li><a class="current" href="../projects/">Projects</a></li>
+      <li><a href="../contact/">Contact</a></li>
+      <li><a href="../resume/">Resume</a></li>
+      <li><a href="https://github.com/hannahhuangh" target="_blank">Profile</a></li>
+    </ul>
+  </nav>
+
+  <h1>My Projects</h1>
+
+  <div class="projects">
+    <article>
+      <h2><a href="https://pantrypalucsd.streamlit.app/#pantry-pal" target="_blank">PantryPal Recipe Finder</a></h2>
+      <img src="../images/PantryPal.jpg" alt="PantryPal Website">
+      <p>
+        Built a recipe recommendation website that suggests meals based on pantry ingredients.
+        Users are able to upload an image of items in their pantry and our website works to detect
+        the items and suggest recipes based on both ingredient match and nutrition levels.
+      </p>
+    </article>
+
+    <article>
+      <h2><a href="https://shamitagoyal.github.io/dsc3-projects-2025/" target="_blank">Breast Cancer Image Classification</a></h2>
+      <img src="../images/BenignMalignant.jpg" alt="Benign vs. Malignant Cells Project Report">
+      <p>
+        Built a machine learning image recognition model capable of detecting benign vs.
+        malignant cells at a variety of different magnifications.
+      </p>
+    </article>
+
+    <article>
+      <h2><a href="https://j-r-dial.github.io/Outages-Project/" target="_blank">Power Outage Pattern Discovery</a></h2>
+      <img src="../images/PowerOutage.jpg" alt="Power outage project">
+      <p>
+        An exploratory data analysis project focused on causes, duration, and regional patterns
+        in U.S. outages.
+      </p>
+    </article>
+
+    <article>
+      <h2>UCSD Colleges Website</h2>
+      <img src="../images/UCSD_Colleges_Web.jpg" alt="Front page of college website">
+      <p>
+        An interactive website designed to help students explore UC San Diego’s eight colleges
+        and campus life.
+      </p>
+    </article>
+
+    <article>
+      <h2>Socal Geoguesser Image Classifier</h2>
+      <img src="../images/SoCalGeusser.jpg" alt="Model accuracy ratings">
+      <p>
+        Built an image classification model capable of detecting which Southern California city
+        (Riverside, Anaheim, San Diego, SLO, Bakersfield, Los Angeles) an image is located in
+        with 92% accuracy.
+      </p>
+    </article>
+  </div>
 </body>
 </html>
