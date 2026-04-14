@@ -1,6 +1,9 @@
-/* Base */
+/* base */
 html {
+  color-scheme: light dark;
   --color-accent: oklch(65% 50% 0);
+  --border-color: oklch(50% 10% 200 / 40%);
+  --text-muted: color-mix(in oklch, canvastext, canvas 40%);
   accent-color: var(--color-accent);
 }
 
@@ -9,10 +12,13 @@ body {
   max-width: 100ch;
   margin-inline: max(1em, (100% - 100ch) / 2);
   padding: 1em;
+  background-color: canvas;
+  color: canvastext;
 }
 
 h1 {
   font-size: 400%;
+  margin-block: 0.5em;
 }
 
 h1,
@@ -25,8 +31,23 @@ h6 {
   text-wrap: balance;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
-/* Navigation */
+figure {
+  margin: 0;
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+}
+
+
+/* navigation */
 nav ul,
 nav li {
   display: contents;
@@ -35,7 +56,7 @@ nav li {
 nav {
   display: flex;
   margin-bottom: 2em;
-  border-bottom: 1px solid oklch(80% 3% 200);
+  border-bottom: 1px solid var(--border-color);
 }
 
 nav a {
@@ -47,18 +68,56 @@ nav a {
 }
 
 nav a.current {
-  border-bottom: 0.4em solid oklch(80% 3% 200);
+  border-bottom: 0.4em solid var(--border-color);
   padding-bottom: 0.1em;
+  font-weight: bold;
 }
 
 nav a:hover {
-  border-bottom: 0.4em solid var(--color-accent);
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  border-bottom: 0.4em solid light-dark(
+    var(--color-accent),
+    oklch(from var(--color-accent) 95% 5% h)
+  );
+  background-color: light-dark(
+    oklch(from var(--color-accent) 95% 5% h),
+    var(--color-accent)
+  );
+  color: light-dark(inherit, white);
   padding-bottom: 0.1em;
 }
 
 
-/* Contacts */
+/* theme switch */
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+}
+
+.color-scheme select {
+  font: inherit;
+}
+
+
+/* homepage */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.home p {
+  max-width: 65ch;
+}
+
+.home img {
+  margin-top: 1rem;
+}
+
+
+/* contact */
 form {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -73,7 +132,8 @@ form label {
 
 form input,
 form textarea,
-form button {
+form button,
+form select {
   font: inherit;
 }
 
@@ -88,7 +148,7 @@ form button {
 }
 
 
-/* Projects */
+/* projects */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -120,11 +180,19 @@ form button {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  display: block;
 }
 
 
-/* Resume */
+/* resume */
+.resume-page .resume-intro {
+  text-align: center;
+  margin-bottom: 2.5em;
+}
+
+.resume-page .resume-intro p {
+  margin: 0.4em 0;
+}
+
 .resume-contact {
   margin-bottom: 2em;
 }
@@ -143,7 +211,7 @@ section {
 }
 
 section h2 {
-  border-bottom: 2px solid oklch(80% 3% 200);
+  border-bottom: 2px solid var(--border-color);
   padding-bottom: 0.3em;
   margin-bottom: 0.75em;
 }
@@ -167,7 +235,7 @@ section header h3 {
 
 section header p {
   margin: 0;
-  color: #666;
+  color: var(--text-muted);
 }
 
 section ul {
@@ -177,4 +245,32 @@ section ul {
 
 section p {
   margin: 0.4em 0;
+}
+
+
+/* screens */
+@media (max-width: 700px) {
+  h1 {
+    font-size: 300%;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    min-width: 45%;
+  }
+
+  .color-scheme {
+    position: static;
+    display: block;
+    margin-bottom: 1rem;
+    text-align: right;
+  }
+
+  section header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
