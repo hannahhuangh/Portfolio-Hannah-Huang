@@ -1,31 +1,30 @@
 [
-    {
-      "title": "PantryPal Recipe Finder",
-      "image": "../images/PantryPal.jpg",
-      "description": "Built a recipe recommendation website that suggests meals based on pantry ingredients. Users are able to upload an image of items in their pantry and our website works to detect the items and suggest recipes based on both ingredient match and nutrition levels.",
-      "url": "https://pantrypalucsd.streamlit.app/#pantry-pal"
-    },
-    {
-      "title": "Breast Cancer Image Classification",
-      "image": "../images/BenignMalignant.jpg",
-      "description": "Built a machine learning image recognition model capable of detecting benign vs. malignant cells at a variety of different magnifications.",
-      "url": "https://shamitagoyal.github.io/dsc3-projects-2025/"
-    },
-    {
-      "title": "Power Outage Pattern Discovery",
-      "image": "../images/PowerOutage.jpg",
-      "description": "An exploratory data analysis project focused on causes, duration, and regional patterns in U.S. outages.",
-      "url": "https://j-r-dial.github.io/Outages-Project/"
-    },
-    {
-      "title": "UCSD Colleges Website",
-      "image": "../images/UCSD_Colleges_Web.jpg",
-      "description": "An interactive website designed to help students explore UC San Diego’s eight colleges and campus life."
-    },
-    {
-      "title": "Socal Geoguesser Image Classifier",
-      "image": "../images/SoCalGeusser.jpg",
-      "description": "Built an image classification model capable of detecting which Southern California city (Riverside, Anaheim, San Diego, SLO, Bakersfield, Los Angeles) an image is located in with 92% accuracy."
-    }
-  ]
-  
+  {
+    "title": "PantryPal Recipe Finder",
+    "image": "images/PantryPal.jpg",
+    "description": "Built a recipe recommendation website that suggests meals based on pantry ingredients. Users are able to upload an image of items in their pantry and our website works to detect the items and suggest recipes based on both ingredient match and nutrition levels.",
+    "url": "https://pantrypalucsd.streamlit.app/#pantry-pal"
+  },
+  {
+    "title": "Breast Cancer Image Classification",
+    "image": "images/BenignMalignant.jpg",
+    "description": "Built a machine learning image recognition model capable of detecting benign vs. malignant cells at a variety of different magnifications.",
+    "url": "https://shamitagoyal.github.io/dsc3-projects-2025/"
+  },
+  {
+    "title": "Power Outage Pattern Discovery",
+    "image": "images/PowerOutage.jpg",
+    "description": "An exploratory data analysis project focused on causes, duration, and regional patterns in U.S. outages.",
+    "url": "https://j-r-dial.github.io/Outages-Project/"
+  },
+  {
+    "title": "UCSD Colleges Website",
+    "image": "images/UCSD_Colleges_Web.jpg",
+    "description": "An interactive website designed to help students explore UC San Diego’s eight colleges and campus life."
+  },
+  {
+    "title": "Socal Geoguesser Image Classifier",
+    "image": "images/SoCalGeusser.jpg",
+    "description": "Built an image classification model capable of detecting which Southern California city (Riverside, Anaheim, San Diego, SLO, Bakersfield, Los Angeles) an image is located in with 92% accuracy."
+  }
+]
