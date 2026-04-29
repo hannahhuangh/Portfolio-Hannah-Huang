@@ -303,6 +303,17 @@ svg:has(path.selected) path:not(.selected) {
   font-weight: bold;
 }
 
+.searchBar {
+  width: 100%;
+  max-width: 35rem;
+  padding: 0.6rem 0.8rem;
+  margin: 1.5rem 0;
+  font: inherit;
+  font-size: 1.1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.4rem;
+}
+
 /* resume */
 .resume-page .resume-intro {
   text-align: center;
