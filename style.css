@@ -309,9 +309,9 @@ svg:has(path.selected) path:not(.selected) {
   padding: 0.6rem 0.8rem;
   margin: 1.5rem 0;
   font: inherit;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   border: 1px solid var(--border-color);
-  border-radius: 0.4rem;
+  border-radius: 0.5rem;
 }
 
 /* resume */
