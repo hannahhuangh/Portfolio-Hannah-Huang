@@ -405,3 +405,101 @@ section p {
     align-items: flex-start;
   }
 }
+
+/* Meta*/
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.stats dt {
+  grid-row: 1;
+  margin: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.stats dd {
+  grid-row: 2;
+  margin: 0;
+  font-size: 2rem;
+}
+
+#chart {
+  max-width: 100%;
+  margin-top: 1rem;
+}
+
+#chart svg {
+  width: 100%;
+  height: auto;
+}
+
+.gridlines line {
+  stroke: var(--border-color);
+  stroke-opacity: 0.4;
+}
+
+.gridlines path {
+  display: none;
+}
+
+.dots circle {
+  opacity: 0.8;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.75rem;
+  margin: 0;
+}
+
+.info dt {
+  color: var(--text-muted);
+  font-weight: bold;
+}
+
+.info dd {
+  margin: 0;
+}
+
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  z-index: 10;
+  background: canvas;
+  color: canvastext;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 25%);
+  pointer-events: none;
+}
+
+dl.info {
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
