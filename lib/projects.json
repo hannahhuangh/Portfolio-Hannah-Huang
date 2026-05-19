@@ -31,5 +31,26 @@
     "year": "2025",
     "image": "images/SoCalGeusser.jpg",
     "description": "Built an image classification model capable of detecting which Southern California city (Riverside, Anaheim, San Diego, SLO, Bakersfield, Los Angeles) an image is located in with 92% accuracy."
+  },
+  {
+    "title": "Boston Bike Watch",
+    "year": "2026",
+    "image": "images/bostonbikewatch.jpg",
+    "description": "Built an interactive bike traffic visualization using Mapbox and D3 to explore bike ridership patterns across Boston by time and location.",
+    "url": "https://hannahhuangh.github.io/bostonbikewatch/"
+  },
+  {
+    "title": "Surface Heat in Motion",
+    "year": "2026",
+    "image": "images/surfaceheatinmotion.jpg",
+    "description": "Created an interactive visualization exploring surface heat patterns over time using visual encodings to show spatial and temporal change.",
+    "url": "https://hannahhuangh.github.io/Surface_Heat_In_Motion/"
+  },
+  {
+    "title": "US Abortions Visualization",
+    "year": "2026",
+    "image": "images/USAbortions.png",
+    "description": "Designed an interactive data visualization exploring abortion trends in the United States, using charts and filters to support clearer comparison across categories. Winner of Best Project Awards",
+    "url": "https://j-r-dial.github.io/DSC-106-Project-2/"
   }
 ]
