@@ -1,4 +1,5 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
+import scrollama from "https://cdn.jsdelivr.net/npm/scrollama@3.2.0/+esm";
 
 let data = [];
 let commits = [];
@@ -307,6 +308,78 @@ function onTimeSliderChange() {
   updateScatterPlot(data, filteredCommits);
 }
 
+function renderCommitStory(commits) {
+  d3.select("#scatter-story")
+    .selectAll(".step")
+    .data(commits)
+    .join("div")
+    .attr("class", "step")
+    .html((d, i) => {
+      const date = d.datetime.toLocaleString("en", {
+        dateStyle: "full",
+        timeStyle: "short",
+      });
+
+      const files = d3.rollups(
+        d.lines,
+        (v) => v.length,
+        (line) => line.file
+      );
+
+      const filesText = files
+        .map(([file, count]) => `${file} (${count} lines)`)
+        .join(", ");
+
+      return `
+        <p>
+          On <strong>${date}</strong>, I made
+          <a href="${d.url}" target="_blank" rel="noopener noreferrer">
+            commit ${i + 1}
+          </a>.
+        </p>
+
+        <p>
+          This commit edited <strong>${d.totalLines}</strong> lines across:
+          ${filesText}.
+        </p>
+      `;
+    });
+}
+
+function setupScrollytelling() {
+  const scroller = scrollama();
+
+  scroller
+    .setup({
+      container: "#scrolly-1",
+      step: "#scrolly-1 .step",
+      offset: 0.5,
+    })
+    .onStepEnter((response) => {
+      const commit = response.element.__data__;
+
+      commitMaxTime = commit.datetime;
+      commitProgress = timeScale(commitMaxTime);
+
+      const slider = document.querySelector("#commit-progress");
+      slider.value = commitProgress;
+
+      const time = document.querySelector("#commit-date-display");
+      time.textContent = commitMaxTime.toLocaleString("en", {
+        dateStyle: "long",
+        timeStyle: "short",
+      });
+
+      filteredCommits = commits.filter((d) => d.datetime <= commitMaxTime);
+
+      updateFilesDisplay(filteredCommits);
+      renderCommitInfo(data, filteredCommits);
+      updateScatterPlot(data, filteredCommits);
+    });
+
+  window.addEventListener("resize", scroller.resize);
+}
+
 function isCommitSelected(selection, commit) {
   if (!selection) {
     return false;
@@ -395,5 +468,7 @@ commitMaxTime = timeScale.invert(commitProgress);
 renderCommitInfo(data, commits);
 renderScatterPlot(data, commits);
 updateFilesDisplay(commits);
+renderCommitStory(commits);
 setupSlider();
+setupScrollytelling();
 onTimeSliderChange();
