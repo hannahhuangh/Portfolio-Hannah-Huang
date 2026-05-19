@@ -139,7 +139,6 @@ nav a:hover {
   padding-bottom: 0.1em;
 }
 
-
 /* theme switch */
 .color-scheme {
   position: absolute;
@@ -151,7 +150,6 @@ nav a:hover {
 .color-scheme select {
   font: inherit;
 }
-
 
 /* homepage */
 .home {
@@ -168,7 +166,6 @@ nav a:hover {
 .home img {
   margin-top: 1rem;
 }
-
 
 /* contact */
 form {
@@ -199,7 +196,6 @@ form textarea {
 form button {
   grid-column: 1 / -1;
 }
-
 
 /* projects */
 .projects {
@@ -378,7 +374,6 @@ section p {
   margin: 0.4em 0;
 }
 
-
 /* screens */
 @media (max-width: 700px) {
   h1 {
@@ -406,7 +401,7 @@ section p {
   }
 }
 
-/* Meta*/
+/* Meta */
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
@@ -513,4 +508,76 @@ circle.selected {
   stroke: currentColor;
   stroke-opacity: 0.7;
   stroke-dasharray: 5 3;
+}
+
+/* Lab 8 Step 1: slider */
+.commit-control {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-block: 1.5rem;
+}
+
+.commit-control label {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+#commit-progress {
+  flex: 1;
+}
+
+#commit-date-display {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Lab 8 Step 2: file unit visualization */
+#files {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 0.5rem 1rem;
+  margin-block: 2rem;
+}
+
+#files > div {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+#files dt {
+  grid-column: 1;
+}
+
+#files dt small {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.8em;
+  margin-top: 0.15em;
+}
+
+#files dd {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  align-content: start;
+  gap: 0.15em;
+  padding-top: 0.6em;
+  margin-left: 0;
+}
+
+#files code {
+  font-weight: bold;
+}
+
+.loc {
+  display: flex;
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: var(--color, steelblue);
+  border-radius: 50%;
 }
